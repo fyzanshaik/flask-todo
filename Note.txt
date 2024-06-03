@@ -1,0 +1,27 @@
+Commands to use: 
+
+
+Setting up virtual environment: 
+
+python3 -m venv env
+source env/bin/activate   # On Windows use `env\Scripts\activate`
+
+Installing flask dependencies : 
+
+pip install Flask psycopg2-binary python-dotenv
+
+
+creating .env file: 
+touch .env
+
+
+Add your postgres connection string: 
+DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]?sslmode=require
+
+Run this in your postgresql editor: 
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    task VARCHAR(255) NOT NULL,
+    description TEXT,
+    status BOOLEAN DEFAULT FALSE
+);
